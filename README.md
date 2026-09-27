@@ -170,3 +170,8 @@ pydantics regler kan skilja sig vid direkt validering från JSON.
 - [Pydantic: felhantering](https://docs.pydantic.dev/latest/errors/errors/)
 - [Python: virtuella miljöer](https://docs.python.org/3/library/venv.html)
 - [Pydantic: strikt validering](https://docs.pydantic.dev/latest/concepts/strict_mode/)
+
+
+## Rapport 
+
+Den skriftliga rapporten finns i [rapport.md](rapport.md).
