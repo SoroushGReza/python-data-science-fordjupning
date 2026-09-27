@@ -95,19 +95,28 @@ Programmet läser `data/orders.csv` och skapar:
 
 Resultatfilerna skrivs om vid varje körning.
 
+
 ### Exempeldata
 
-CSV-filen innehåller tio syntetiska orderrader skapade för demonstrationen.
-Den innehåller inga verkliga kunduppgifter. Priserna avser SEK.
+Datasetet består av tio syntetiska orderrader som togs fram med hjälp
+av ChatGPT (OpenAI) för detta projekt. Uppgifterna är påhittade och representerar
+inga verkliga kunder eller beställningar. Priserna avser SEK.
 
 Filen använder UTF-8, komma som fältavskiljare och punkt som decimaltecken.
 Den ska innehålla exakt dessa kolumner:
 
 `order_id,product,quantity,unit_price,order_date`
 
-Exempeldata innehåller avsiktliga fel: tom produkttext, antal noll,
-negativt pris, ogiltigt datum, antal med decimaler och pris med för
-många decimaler.
+Exempeldata innehåller både giltiga värden och avsiktliga fel:
+tom produkttext, antal noll, negativt pris, ogiltigt datum,
+antal med decimaler och pris med för många decimaler.
+
+Syftet är att kontrollera om valideringen godkänner rätt rader och
+identifierar de förväntade felen.
+
+En begränsning är att detta lilla, konstruerade dataset inte täcker
+all variation och alla fel som kan förekomma i verkliga orderdata.
+
 
 ### Förväntat resultat
 
