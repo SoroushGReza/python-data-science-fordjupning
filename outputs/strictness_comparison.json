@@ -1,0 +1,38 @@
+[
+  {
+    "input": "'3'",
+    "input_type": "str",
+    "normal": "Godkänd (antal=3)",
+    "strict": "Underkänd (int_type)"
+  },
+  {
+    "input": "3",
+    "input_type": "int",
+    "normal": "Godkänd (antal=3)",
+    "strict": "Godkänd (antal=3)"
+  },
+  {
+    "input": "3.0",
+    "input_type": "float",
+    "normal": "Godkänd (antal=3)",
+    "strict": "Underkänd (int_type)"
+  },
+  {
+    "input": "3.5",
+    "input_type": "float",
+    "normal": "Underkänd (int_from_float)",
+    "strict": "Underkänd (int_type)"
+  },
+  {
+    "input": "True",
+    "input_type": "bool",
+    "normal": "Godkänd (antal=1)",
+    "strict": "Underkänd (int_type)"
+  },
+  {
+    "input": "0",
+    "input_type": "int",
+    "normal": "Underkänd (greater_than)",
+    "strict": "Underkänd (greater_than)"
+  }
+]

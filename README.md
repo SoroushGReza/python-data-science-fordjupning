@@ -136,9 +136,40 @@ Saknade, oväntade eller dubblerade kolumnrubriker stoppar körningen.
 Valideringsfel i enskilda orderrader samlas i felrapporten.
 
 
+## Jämförelse av normal och strikt validering
+
+Kör:
+
+```powershell
+.\.venv\Scripts\python.exe compare_validation.py
+```
+
+Programmet använder samma ordermodell och jämför sex värden för
+`quantity`: `"3"`, `3`, `3.0`, `3.5`, `True` och `0`.
+
+Övriga fält har korrekkta Python-typer för att isolera undersökningen
+till antalet. Resultatet sparas i `outputs/strictness_comparison.json`.
+
+I normalt läge accepteras exemplvis texten `"3"` och omvandlas till
+heltal `3`. Strikt validering avvisar samma textvärde.
+
+Jämförelsen visar också att det booleaska Python-värdet `True` kan
+omvandlas till antalet `1` i normalt läge. Typomvandling kan därför
+dölja oväntade indatatyper. Antalet `0` avvisas i båda lägena eftersom
+modellen kräver ett värde större än noll.
+
+CSV flödet använder normal validering eftersom CSV värden läses som
+text. Ett alternativ är att först göra uttryckliga typomvandlingar
+och därefter använda strikt vallidering.
+
+Jämförelsen gäller Python dictionaries via `model_validate()`.
+pydantics regler kan skilja sig vid direkt validering från JSON.
+
+
 ## Dokumentation
 
 - [Pydantic: modeller](https://docs.pydantic.dev/latest/concepts/models/)
 - [Pydantic: validatorer](https://docs.pydantic.dev/latest/concepts/validators/)
 - [Pydantic: felhantering](https://docs.pydantic.dev/latest/errors/errors/)
 - [Python: virtuella miljöer](https://docs.python.org/3/library/venv.html)
+- [Pydantic: strikt validering](https://docs.pydantic.dev/latest/concepts/strict_mode/)
