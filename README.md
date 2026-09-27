@@ -56,12 +56,6 @@ py -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-## Projektstatus
-
-CSV-valideringen och demonstrationerna är implementerade.
-Exempeldata och sparade körresultat finns i repositoryt.
-Skriftlig rapport och muntligt presentationsmanus återstår.
-
 ## Köra datamodellens demonstration
 
 Kör från projektets rot:
