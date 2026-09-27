@@ -80,6 +80,53 @@ Datamodellen finns i `order_model.py`. Demonstrationen finns i
 `demo_model.py`.
 
 
+## Köra CSV-valideringen
+
+Kör från projektets rot:
+
+```powershell
+.\.venv\Scripts\python.exe validate_orders.py
+```
+
+Programmet läser `data/orders.csv` och skapar:
+
+- `outputs/valid_orders.csv`: orderrader som uppfyller valideringsreglerna.
+- `outputs/validation_report.json`: sammanfattning och detaljer om fel.
+
+Resultatfilerna skrivs om vid varje körning.
+
+### Exempeldata
+
+CSV-filen innehåller tio syntetiska orderrader skapade för demonstrationen.
+Den innehåller inga verkliga kunduppgifter. Priserna avser SEK.
+
+Filen använder UTF-8, komma som fältavskiljare och punkt som decimaltecken.
+Den ska innehålla exakt dessa kolumner:
+
+`order_id,product,quantity,unit_price,order_date`
+
+Exempeldata innehåller avsiktliga fel: tom produkttext, antal noll,
+negativt pris, ogiltigt datum, antal med decimaler och pris med för
+många decimaler.
+
+### Förväntat resultat
+
+- Behandlade orderrader: 10
+- Godkända orderrader: 5
+- Underkända orderrader: 5
+- Valideringsfel: 6
+- Summa för godkända orderrader: 873.10 SEK
+
+En rad kan innehålla flera fel. Därför redovisas antalet underkända
+rader och antalet valideringsfel separat.
+
+`csv_line` i felrapporten anger postens sista fysiska rad i CSV-filen.
+För exempeldata ligger varje post på en enda rad.
+
+Saknade, oväntade eller dubblerade kolumnrubriker stoppar körningen.
+Valideringsfel i enskilda orderrader samlas i felrapporten.
+
+
 ## Dokumentation
 
 - [Pydantic: modeller](https://docs.pydantic.dev/latest/concepts/models/)

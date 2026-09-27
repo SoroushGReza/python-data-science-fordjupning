@@ -1,0 +1,71 @@
+{
+  "source_file": "orders.csv",
+  "total_rows": 10,
+  "valid_rows": 5,
+  "invalid_rows": 5,
+  "error_count": 6,
+  "valid_total_amount": "873.10",
+  "currency": "SEK",
+  "rejected_rows": [
+    {
+      "csv_line": 5,
+      "order_id": "ORD-1004",
+      "errors": [
+        {
+          "field": "quantity",
+          "message": "Input should be greater than 0",
+          "type": "greater_than"
+        }
+      ]
+    },
+    {
+      "csv_line": 6,
+      "order_id": "ORD-1005",
+      "errors": [
+        {
+          "field": "product",
+          "message": "Value error, Fältet får inte vara tomt eller bara innehålla blanksteg.",
+          "type": "value_error"
+        }
+      ]
+    },
+    {
+      "csv_line": 7,
+      "order_id": "ORD-1006",
+      "errors": [
+        {
+          "field": "unit_price",
+          "message": "Input should be greater than or equal to 0",
+          "type": "greater_than_equal"
+        }
+      ]
+    },
+    {
+      "csv_line": 8,
+      "order_id": "ORD-1007",
+      "errors": [
+        {
+          "field": "order_date",
+          "message": "Input should be a valid date or datetime, day value is outside expected range",
+          "type": "date_from_datetime_parsing"
+        }
+      ]
+    },
+    {
+      "csv_line": 11,
+      "order_id": "ORD-1010",
+      "errors": [
+        {
+          "field": "quantity",
+          "message": "Input should be a valid integer, unable to parse string as an integer",
+          "type": "int_parsing"
+        },
+        {
+          "field": "unit_price",
+          "message": "Decimal input should have no more than 2 decimal places",
+          "type": "decimal_max_places"
+        }
+      ]
+    }
+  ]
+}

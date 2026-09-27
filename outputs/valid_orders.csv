@@ -1,0 +1,6 @@
+order_id,product,quantity,unit_price,order_date
+ORD-1001,Anteckningsbok,3,49.90,2026-09-01
+ORD-1002,Penna,10,12.50,2026-09-01
+ORD-1003,Ryggsäck,1,399.00,2026-09-02
+ORD-1008,USB-kabel,2,79.90,2026-09-04
+ORD-1009,Suddgummi,4,9.90,2026-09-04
