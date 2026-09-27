@@ -58,6 +58,28 @@ py -m venv .venv
 Projektet är under utveckling. Körinstruktioner för programmet,
 exempeldata och sparade resultat läggs till under arbetets gång.
 
+
+## Köra datamodellens demonstration
+
+Kör från projektets rot:
+
+```powershell
+.\.venv\Scripts\python.exe demo_model.py
+```
+
+Demonstrationen använder två påhittade orderrader.
+
+Den första visar hur textvärden omvandlas till heltal, Decimal och
+datum, samt hur omgivande blanksteg tas bort från textfält.
+
+Den andra visar fyra valideringsfel: ett tomt produktnamn, antal noll,
+ett negativt pris och ett ogiltigt datum. Felen fångas och presenteras
+med fältnamn och felorsak.
+
+Datamodellen finns i `order_model.py`. Demonstrationen finns i
+`demo_model.py`.
+
+
 ## Dokumentation
 
 - [Pydantic: modeller](https://docs.pydantic.dev/latest/concepts/models/)
