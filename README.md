@@ -16,13 +16,16 @@ Följande frågor undersöks:
 - Hur kan fel rapporteras så att det framgår vilken rad och vilket
   fält som behöver rättas?
 
-## Planerad funktion
+## Funktion
 
-Programmet ska läsa orderdata från en CSV-fil och kontrollera varje
-rad mot en gemensam datamodell.
+Programmet läser orderdata från en CSV-fil och kontrollerar varje
+rad mot en gemensam Pydantic-modell.
 
-Godkända rader ska sparas separat. Rader som inte uppfyller reglerna
-ska redovisas i en felrapport med information om orsaken.
+Godkända rader sparas i en separat CSV-fil. Underkända rader
+redovisas i en JSON-rapport med radnummer, fältnamn och felorsak.
+
+Projektet innehåller även demonstrationer av datamodellen och
+skillnaden mellan normal och strikt validering.
 
 ## Koppling till Data Science
 
@@ -55,9 +58,9 @@ py -m venv .venv
 
 ## Projektstatus
 
-Projektet är under utveckling. Körinstruktioner för programmet,
-exempeldata och sparade resultat läggs till under arbetets gång.
-
+CSV-valideringen och demonstrationerna är implementerade.
+Exempeldata och sparade körresultat finns i repositoryt.
+Skriftlig rapport och muntligt presentationsmanus återstår.
 
 ## Köra datamodellens demonstration
 
